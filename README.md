@@ -1,3 +1,41 @@
+##FLUX
+
+FLUX it's a pattern for passing data around in a REACT APP.
+
+Store(Holds the global app state) -> PROPS->React Views->DISPATCH ACTION -> Action Handlers(Business logic)_
+
+immutable->selectors->map state to props->thunks->reducers->
+
+##Project directory structure
+
+We will organize our code according to the following top-level directory structure under /src:
+
+  -  /src/components
+    -  “Dumb” React components that have no knowledge of Redux       
+    `“Dumb” components receive data from their parents through props and may hold local component state`
+  -  /src/containers
+    -  “Smart” React components that are connected to our Redux store
+     `Rule: Smart components are not allowed to have any logic except dispatching actions.`
+    `Rule: Smart components should always access state through selectors.`
+    `Rule: Minimize view logic in smart components by extracting it into dumb components.`
+  -  /src/services
+    -  Abstraction facades for external API (like backend servers)
+    `Rule: Services must be completely stateless.`
+  -  /src/store
+    -  All Redux-specific code goes here, including all business-logic of our app
+
+The store directory is organized by domain, each containing:
+
+  -  /src/store/{domain}/reducer.js
+    -  Reducer as a default export with all selectors as named exports
+  -  /src/store/{domain}/actions.js
+    -  All the domain action handlers (thunks and plain object creators)
+`All business logic was implemented under Redux in the /src/store directory. Most of it was inside thunks in actions.js and some it was inside selectors in reducer.js`
+`Rule: Place all business logic inside action handlers (thunks), selectors and reducers.`
+
+LINK Post(https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092#.8oxha314y)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
