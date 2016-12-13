@@ -11,8 +11,8 @@ immutable->selectors->map state to props->thunks->reducers->
 We will organize our code according to the following top-level directory structure under /src:
 
   -  /src/components
-    -  “Dumb” React components that have no knowledge of Redux       
-    `“Dumb” components receive data from their parents through props and may hold local component state`
+    -“Dumb” React components that have no knowledge of Redux       
+    -“Dumb” components receive data from their parents through props and may hold local component state
   -  /src/containers
     -  “Smart” React components that are connected to our Redux store
      `Rule: Smart components are not allowed to have any logic except dispatching actions.`
@@ -33,7 +33,7 @@ The store directory is organized by domain, each containing:
 `All business logic was implemented under Redux in the /src/store directory. Most of it was inside thunks in actions.js and some it was inside selectors in reducer.js`
 `Rule: Place all business logic inside action handlers (thunks), selectors and reducers.`
 
-LINK Post(https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092#.8oxha314y)
+[LINK Post](https://hackernoon.com/redux-step-by-step-a-simple-and-robust-workflow-for-real-life-apps-1fdf7df46092#.8oxha314y)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
